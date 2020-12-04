@@ -5,17 +5,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Card, Container, Row, Col, Button, CardBody} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import '../public/tictactoe-logo.svg';
+import '../public/tictactoe-logo.svg'; //Tab icon/ Favicon
 
 
-//Checking for tie
+
 
 
 // Declaring array
-const itemArray = new Array(9).fill("empty")
+const itemArray = new Array(9).fill("empty");
 //array ends
+
 //setting counter
-// let counter = 0;
 let counter = 0;
 
 
@@ -24,21 +24,15 @@ const App = () => {
   const [isCross, setIsCross] = useState(false);
   const [winMessage, setWinMessage] = useState("");
   
-//Tie game 
-// const tieGame =() =>{
-
-//    toast("Please reload the game ;-)", {type: "info"});
-// }
-
-
-  //reload function starts
+//reload function starts
 const reloadGame = () => {
   setIsCross(false);
   setWinMessage("");
   counter = 0;
   itemArray.fill("empty", 0, 9);
-  
 }
+
+
 //function to check winner starts here
 const checkIsWinner =() => {
 if (itemArray[0] === itemArray[1] &&
@@ -94,15 +88,8 @@ else if(counter >= 9)
   setWinMessage('Its a Tie');
 }
 };
-
 //CheckWin method ends here
 
-// const tieGame = (setIsCross, isCross) =>{
-//   if ( isCross ? "cross" : "circle" === 'false'){
-//     return toast("It's an Tie Please reload the game", {type: "error"})
-    
-//   }
-// }
 //function to change/switch player sttarts here 
 const changeItem = itemNumber => {
   counter = counter + 1;
@@ -117,6 +104,9 @@ setIsCross(!isCross);
   }
 checkIsWinner();
 };
+//Player switch function ends here
+
+//Main return method
   return (
     
     <Container className="p-4" >
@@ -140,10 +130,10 @@ checkIsWinner();
         </div>
       </Col>
     </Row>
-    </Container> 
-    
+    </Container>  
   );
 };
+//Return method ends here
 
-
+//Exporting app
 export default App;
